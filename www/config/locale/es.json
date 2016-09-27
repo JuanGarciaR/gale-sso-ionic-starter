@@ -1,0 +1,8 @@
+{
+    "ERR.API.UNAVAILABLE": "El servidor no se encuentra disponible",
+    "ERR.API.ERROR": "Fallo al conectar con la API",
+    "ERR.INTERNET_CONNECTION": "Fallo al conectar con la API",
+
+    "ERR.PRODUCTS_NOT_FOUND": "El producto no se encuentra",
+    "ERR.PRODUCT_NOT_IN_YARD": "El producto no se encuentra en Patio"
+}

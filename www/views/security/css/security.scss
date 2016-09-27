@@ -1,0 +1,24 @@
+@import "../../../bundles/app/css/_variables";
+@import "../../../bundles/app/css/_flexbox";
+[md-theme='sodimac-dark'] {
+    /*------------------------- 
+    VIEW:   Security View's
+    ROUTE:  /app/security/*
+    -------------------------*/
+    ion-view.security {
+        div.close {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            height: 35px;
+            width: 30px;
+            z-index: 999999;
+            @include flexbox();
+            @include align-items(center);
+            @include justify-content(center);
+            > i {
+                font-size: 2em;
+            }
+        }
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "Endpoints": {
+        "SSO": "http://10.211.55.7/Sodimac/SingleSignOn/API/v1/"
+    },
+    "debugging": true
+}

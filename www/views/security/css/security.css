@@ -1,0 +1,37 @@
+/* 
+    SASS Theme Variables 
+*/
+/* 
+    SASS Mixins
+*/
+[md-theme='sodimac-dark'] {
+  /*------------------------- 
+  VIEW:   Security View's
+  ROUTE:  /app/security/*
+  -------------------------*/ }
+  [md-theme='sodimac-dark'] ion-view.security div.close {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    height: 35px;
+    width: 30px;
+    z-index: 999999;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center; }
+    [md-theme='sodimac-dark'] ion-view.security div.close > i {
+      font-size: 2em; }
+
+/*# sourceMappingURL=security.css.map */

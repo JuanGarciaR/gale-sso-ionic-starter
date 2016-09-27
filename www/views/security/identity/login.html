@@ -1,0 +1,33 @@
+<ion-view class="security login">
+    <ion-header-bar class="bar-assertive">
+        <h1 class="title">Identificación de Usuario</h1>
+    </ion-header-bar>
+    <ion-content>
+        <ion-list>
+            <ion-checkbox ng-click="setApp(app);" ng-repeat="app in model.apps" ng-model="app.selected">
+                {{app.name}}
+            </ion-checkbox>
+        </ion-list>
+        <br />
+        <center>
+            <button 
+                class="button " 
+                ng-class="{ 'button-dark': (!model.user && !model.error),
+                            'button-balanced': model.user, 
+                            'button-assertive': model.error}" 
+                ng-click="authenticate()">
+                Identificar con Single Sign On
+            </button>
+        </center>
+        <br />
+        <br />
+        <div style="padding:5px">
+            <div ng-if="model.user">
+                {{model.user | json}}
+            </div>
+            <div ng-if="model.error">
+                {{model.error | json}}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

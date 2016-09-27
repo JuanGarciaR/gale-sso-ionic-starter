@@ -1,0 +1,121 @@
+<ion-view hide-nav-bar="true" class="home" cache-view="false" can-swipe-back="false">
+    <ion-header-bar>
+        <span class="title">
+            Buscador
+        </span>
+        <button ng-click="goToBasket();" class="button button-icon button-clear" ng-class="{'ion-ios-cart-outline': model.basket.length<=0,'ion-ios-cart': model.basket.length>0}">
+            <span ng-if="model.basket.length>0" class="badge badge-assertive">
+                {{model.basket.length}}
+            </span>
+        </button>
+    </ion-header-bar>
+    <ion-header-bar class="bar-subheader bar-custom-header">
+        <div class="container">
+            <!-- PRODUCT INFO -->
+            <div class="sku">
+                <div class="list">
+                    <label class="item item-input">
+                        <i class="icon ion-search placeholder-icon"></i>
+                        <input ng-model="sku" ng-bind="sku" 
+                            numeric-keyboard 
+                            keyboard-on-keypress="keyboardKeypress" 
+                            keyboard-on-show="keyboardOnShow"
+                            keyboard-on-hide="keyboardOnHide" 
+                            keyboard-options="{doneText: 'Buscar', selectTextOnClick: true}" 
+                            ng-change="clear();" type="text" maxlength="10" placeholder="SKU" />
+                    </label>
+                </div>
+            </div>
+            <div class="row actions">
+
+                <div class="col col-50">
+                    <button ng-click="find(sku);" ng-disabled="model.isKeyboardOpen" class="button button-block button-icon ion-ios-search">
+                        Buscar
+                    </button>
+                </div>
+                <div class="col col-50" ng-click="scan()">
+                    <button class="button button-block button-icon ion-ios-barcode-outline">
+                        Escanear
+                    </button>
+                </div>
+
+            </div>
+        </div>
+        <div class="row store" ng-click="changeStore();">
+
+            <div class="col col-80">
+                <span>
+                    {{model.local.name}}
+                </span>
+                <span>
+                    {{model.local.address}}
+                </span>
+            </div>
+
+            <div class="col col-20" >
+                <button class="button button-block button-clear button-icon ion-ios-location-outline">
+                </button>
+            </div>
+
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-subheader has-custom-header">
+        <!-- IOS HEADER FIX -->
+        <ios-header-fix>
+        </ios-header-fix>
+
+        <flex-loading ng-if="model.isLoading" title="Buscando Producto" legend="Espere mientras obtenemos la información...">
+        </flex-loading>
+
+        <empty-data ng-if="!model.isLoading && !model.product" message="Ingrese el código SKU" legend="Acá aparecera el detalle del producto una vez ingrese el SKU en el cuadro de búsqueda superior">
+        </empty-data>
+
+        <code-version ng-if="!model.isLoading && !model.product">
+            v{{model.version}}
+        </code-version>
+        <product-info ng-if="model.product">
+            <div class="title">
+                {{model.product.nombre}}
+            </div>
+            <div class="sku">
+                SKU&nbsp;{{model.product.sku}}
+            </div>
+
+            <div class="slides">
+                <img ng-src="{{model.product.multimedia[0].url}}" />
+            </div>
+
+            <div class="price">
+                $&nbsp;{{model.product.precio.normal | number:0}}
+            </div>
+
+            <div class="row actions">
+                <div class="col col-60">
+                    <div class="legend">
+                        Cantidad:
+                    </div>
+                    <div class="quantity">
+
+                        <button ng-disabled="model.product.cantidad<=1" ng-click="addOrRemoveQuantity(model.product,-1);" class="button button-block button-clear button-icon ion-android-remove">
+                        </button>
+
+                        <input ng-blur="validateQuantityOnBlur(model.product)" ng-change="validateQuantity(model.product)" ng-model="model.product.cantidad" type="tel" maxlength="3" />
+
+                        <button ng-click="addOrRemoveQuantity(model.product,1);" class="button button-block button-clear button-icon ion-android-add">
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="legend">
+                        Para comprar:
+                    </div>
+                    <button ng-click="addToBasket(model.basket, model.product);" class="button button-block">
+                        Agregar a mi lista
+                    </button>
+                </div>
+            </div>
+        </product-info>
+    </ion-content>
+</ion-view>

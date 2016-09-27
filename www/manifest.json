@@ -1,0 +1,11 @@
+{
+  "name": "sso-starter",
+  "short_name": "sso-starter",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}

@@ -1,0 +1,6 @@
+{
+    "Endpoints": {
+        "SSO": "https://api-sso.azurewebsites.net/"
+    },
+    "debugging": true
+}
