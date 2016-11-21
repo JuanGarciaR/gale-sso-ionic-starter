@@ -6,7 +6,6 @@ angular.module('app.layouts').controller('DefaultLayoutController', function(
     $Identity,
     $ionicHistory,
     $Localization,
-    Toaster,
     $timeout,
     CONFIGURATION
 ) {

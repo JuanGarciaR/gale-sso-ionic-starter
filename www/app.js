@@ -12,6 +12,7 @@
 */
 angular.module('App', [
         'gale',
+        'gale-sso',
         'ionic',
         'app',
 

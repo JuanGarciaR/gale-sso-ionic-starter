@@ -10,8 +10,8 @@ angular.route('security/identity/login/:redirect?', function(
 ) {
     var vm = $scope.model = {
         apps: [{
-            name: "MotoApp",
-            client_id: "ODIzNzNkZjItYmU3Mi00ZGQ3LWExNmMtNzUwYWU4ZDM2MGNh",
+            name: "App Sodimac",
+            client_id: "789156083925170982900",
             selected: true,
             scope: [
                 "profile",
@@ -19,9 +19,9 @@ angular.route('security/identity/login/:redirect?', function(
                 "payment"
             ]
         }, {
-            name: "Guía Maestra (no-consent)",
+            name: "Cotizador Virtual (no-consent)",
             prompt: "none",
-            client_id: "YmU3MTQ3ZjEtZGRkMy00ODQ1LTg2ZTYtMjhmODNjMmU1MWI2",
+            client_id: "704082870266602389600",
             scope: [
                 "profile"
             ]
